@@ -23,15 +23,15 @@
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/line-awesome.min.css">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/plugins/magnific-popup/magnific-popup.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/plugins/jquery.countdown.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/jquery.countdown.css">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/skins/skin-demo-4.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/skin-demo-4.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/demo-4.css">
 </head>
 
@@ -255,7 +255,7 @@
                                             <div class="demo-list">
                                                 <div class="demo-item">
                                                     <a href="index-1.html">
-                                                        <span class="demo-bg" style="background-image: url(assets/images/menu/demos/1.jpg);"></span>
+                                                        <span class="demo-bg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/1.jpg);"></span>
                                                         <span class="demo-title">01 - furniture store</span>
                                                     </a>
                                                 </div><!-- End .demo-item -->
