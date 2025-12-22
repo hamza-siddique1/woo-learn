@@ -24,15 +24,8 @@
     <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/line-awesome.min.css">
-    <!-- Plugins CSS File -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/jquery.countdown.css">
-    <!-- Main CSS File -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/skin-demo-4.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/demo-4.css">
+
+    <?php wp_head(); ?>
 </head>
 
 <body>
