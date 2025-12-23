@@ -16,4 +16,10 @@ if ( function_exists('acf_add_options_page') ) {
 
 }
 
+function theme_register_menus() {
+    register_nav_menus( array(
+        'primary_menu' => 'Primary Menu',
+    ) );
+}
+add_action( 'after_setup_theme', 'theme_register_menus' );
 
