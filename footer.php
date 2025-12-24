@@ -25,57 +25,49 @@
 	            	<div class="row">
 	            		<div class="col-sm-6 col-lg-3">
 	            			<div class="widget widget-about">
-	            				<img src="assets/images/demos/demo-4/logo-footer.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+
+                            <?php if($footer_logo = get_field('footer_logo', 'options')) : ?>
+                                <img src="<?php echo $footer_logo['url']; ?>" alt="<?php echo $footer_logo['title']; ?>" class="footer-logo" width="105" height="25">
+                            <? endif; ?>
+
 	            				<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
 
 	            				<div class="widget-call">
-                                    <i class="icon-phone"></i>
-                                    Got Question? Call us 24/7
-                                    <a href="tel:#">+0123 456 789</a>
+                                    <?php if( $footer_phone_number = get_field('footer_phone_number', 'option') ) : ?>
+                                        <i class="icon-phone"></i>
+                                            Got Question? Call us 24/7
+                                        <a href="tel:#"><?php echo $footer_phone_number; ?></a>
+                                    <?php endif; ?>
+
                                 </div><!-- End .widget-call -->
 	            			</div><!-- End .widget about-widget -->
 	            		</div><!-- End .col-sm-6 col-lg-3 -->
 
 	            		<div class="col-sm-6 col-lg-3">
 	            			<div class="widget">
-	            				<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
-
-	            				<ul class="widget-list">
-	            					<li><a href="about.html">About Molla</a></li>
-                                    <li><a href="#">Our Services</a></li>
-	            					<li><a href="#">How to shop on Molla</a></li>
-	            					<li><a href="faq.html">FAQ</a></li>
-	            					<li><a href="contact.html">Contact us</a></li>
-	            				</ul><!-- End .widget-list -->
+                                <?php if( $useful_links = get_field('useful_links', 'option') ) : ?>
+                                        <?php echo $useful_links; ?>
+                                    <?php endif; ?>
 	            			</div><!-- End .widget -->
 	            		</div><!-- End .col-sm-6 col-lg-3 -->
 
 	            		<div class="col-sm-6 col-lg-3">
 	            			<div class="widget">
-	            				<h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="#">Payment Methods</a></li>
-	            					<li><a href="#">Money-back guarantee!</a></li>
-	            					<li><a href="#">Returns</a></li>
-	            					<li><a href="#">Shipping</a></li>
-	            					<li><a href="#">Terms and conditions</a></li>
-	            					<li><a href="#">Privacy Policy</a></li>
-	            				</ul><!-- End .widget-list -->
+                                <?php if( $customer_service = get_field('customer_service', 'option') ) : ?>
+                                        <?php echo $customer_service; ?>
+                                    <?php endif; ?>
+
 	            			</div><!-- End .widget -->
 	            		</div><!-- End .col-sm-6 col-lg-3 -->
 
 	            		<div class="col-sm-6 col-lg-3">
 	            			<div class="widget">
-	            				<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="#">Sign In</a></li>
-	            					<li><a href="cart.html">View Cart</a></li>
-	            					<li><a href="#">My Wishlist</a></li>
-	            					<li><a href="#">Track My Order</a></li>
-	            					<li><a href="#">Help</a></li>
-	            				</ul><!-- End .widget-list -->
+                            <?php if( $my_account = get_field('my_account', 'option') ) : ?>
+                                        <?php echo $my_account; ?>
+                                    <?php endif; ?>
+
 	            			</div><!-- End .widget -->
 	            		</div><!-- End .col-sm-6 col-lg-3 -->
 	            	</div><!-- End .row -->
