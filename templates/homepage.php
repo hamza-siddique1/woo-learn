@@ -22,27 +22,58 @@ get_header();
 
                     <?php
                         $slider_section = get_field('slider_section');
-                        foreach($slider_section as $slider):
+
+                        if ( ! empty( $slider_section ) && is_array( $slider_section ) ) :
+                            foreach($slider_section as $slider):
+                                $image_url = ! empty( $slider['image']['url'] ) ? $slider['image']['url'] : '';
+
+                                $subtitle  = ! empty( $slider['subtitle'] ) ? $slider['subtitle'] : '';
+                                $title     = ! empty( $slider['title'] ) ? $slider['title'] : '';
+                                $price     = ! empty( $slider['price'] ) ? $slider['price'] : '';
+
+                                $button_url   = ! empty( $slider['button']['url'] ) ? $slider['button']['url'] : '';
+                                $button_title = ! empty( $slider['button']['title'] ) ? $slider['button']['title'] : '';
                     ?>
-                    <div class="intro-slide" style="background-image: url(<?php echo $slider['image']['url'] ?>);">
+                    <div class="intro-slide"
+                    <?php if ( $image_url ) : ?>
+                        style="background-image: url(<?php echo $image_url; ?>);">
+                    <?php endif; ?>
                         <div class="container intro-content">
                             <div class="row justify-content-end">
                                 <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                                    <h3 class="intro-subtitle text-third"><?php echo $slider['subtitle'] ?></h3>
-                                    <h1 class="intro-title"><?php echo $slider['title'] ?></h1>
+                                    <?php if ( $subtitle ) : ?>
+                                        <h3 class="intro-subtitle text-third">
+                                            <?php echo $subtitle; ?>
+                                        </h3>
+                                    <?php endif; ?>
+                                    <?php if ( $title ) : ?>
+                                        <h1 class="intro-title">
+                                            <?php echo $title; ?>
+                                        </h1>
+                                    <?php endif; ?>
 
-                                    <?php echo $slider['price'] ?>
+                                    <?php if ( $price ) : ?>
+                                        <div class="intro-price">
+                                            <?php echo $price; ?>
+                                        </div>
+                                    <?php endif; ?>
 
-                                    <a href="<?php echo $slider['button']['url'] ?>" class="btn btn-primary btn-round">
-                                        <span><?php echo $slider['button']['title'] ?></span>
-                                        <i class="icon-long-arrow-right"></i>
-                                    </a>
-                                </div><!-- End .col-lg-11 offset-lg-1 -->
-                            </div><!-- End .row -->
-                        </div><!-- End .intro-content -->
-                    </div><!-- End .intro-slide -->
+                                    <?php if ( $button_url && $button_title ) : ?>
+                                        <a href="<?php echo $button_url; ?>"
+                                        class="btn btn-primary btn-round">
+                                            <span><?php echo $button_title; ?></span>
+                                            <i class="icon-long-arrow-right"></i>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <?php endforeach; ?>
+                    <?php
+                            endforeach;
+                        endif;
+                    ?>
 
                 </div><!-- End .intro-slider owl-carousel owl-simple -->
 
