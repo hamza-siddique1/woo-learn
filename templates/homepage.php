@@ -19,23 +19,22 @@ get_header();
                             }
                         }
                     }'>
-                    <div class="intro-slide" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/slider/slide-1.png);">
+
+                    <?php
+                        $slider_section = get_field('slider_section');
+                        foreach($slider_section as $slider):
+                    ?>
+                    <div class="intro-slide" style="background-image: url(<?php echo $slider['image']['url'] ?>);">
                         <div class="container intro-content">
                             <div class="row justify-content-end">
                                 <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                                    <h3 class="intro-subtitle text-third">Deals and Promotions</h3><!-- End .h3 intro-subtitle -->
-                                    <h1 class="intro-title">Beats by</h1>
-                                    <h1 class="intro-title">Dre Studio 3</h1><!-- End .intro-title -->
+                                    <h3 class="intro-subtitle text-third"><?php echo $slider['subtitle'] ?></h3>
+                                    <h1 class="intro-title"><?php echo $slider['title'] ?></h1>
 
-                                    <div class="intro-price">
-                                        <sup class="intro-old-price">$349,95</sup>
-                                        <span class="text-third">
-                                            $279<sup>.99</sup>
-                                        </span>
-                                    </div><!-- End .intro-price -->
+                                    <?php echo $slider['price'] ?>
 
-                                    <a href="category.html" class="btn btn-primary btn-round">
-                                        <span>Shop More</span>
+                                    <a href="<?php echo $slider['button']['url'] ?>" class="btn btn-primary btn-round">
+                                        <span><?php echo $slider['button']['title'] ?></span>
                                         <i class="icon-long-arrow-right"></i>
                                     </a>
                                 </div><!-- End .col-lg-11 offset-lg-1 -->
@@ -43,28 +42,8 @@ get_header();
                         </div><!-- End .intro-content -->
                     </div><!-- End .intro-slide -->
 
-                    <div class="intro-slide" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/slider/slide-2.png);">
-                        <div class="container intro-content">
-                            <div class="row justify-content-end">
-                                <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                                    <h3 class="intro-subtitle text-primary">New Arrival</h3><!-- End .h3 intro-subtitle -->
-                                    <h1 class="intro-title">Apple iPad Pro <br>12.9 Inch, 64GB </h1><!-- End .intro-title -->
+                    <?php endforeach; ?>
 
-                                    <div class="intro-price">
-                                        <sup>Today:</sup>
-                                        <span class="text-primary">
-                                            $999<sup>.99</sup>
-                                        </span>
-                                    </div><!-- End .intro-price -->
-
-                                    <a href="category.html" class="btn btn-primary btn-round">
-                                        <span>Shop More</span>
-                                        <i class="icon-long-arrow-right"></i>
-                                    </a>
-                                </div><!-- End .col-md-6 offset-md-6 -->
-                            </div><!-- End .row -->
-                        </div><!-- End .intro-content -->
-                    </div><!-- End .intro-slide -->
                 </div><!-- End .intro-slider owl-carousel owl-simple -->
 
                 <span class="slider-loader"></span><!-- End .slider-loader -->
